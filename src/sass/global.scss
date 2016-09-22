@@ -1,0 +1,10 @@
+@import "mixins";
+@import "reset";
+@import "grid"; 
+
+body { background-color: white; color: #000; font-family: 'Roboto', sans-serif; font-size: 16px;}
+h3 { font-size: 18px; }
+.container { max-width: 1020px; margin: 0 auto; }
+.section { margin: 40px 0 40px; }
+
+.center { text-align: center; }

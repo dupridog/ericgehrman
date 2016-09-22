@@ -1,0 +1,85 @@
+[class*="grid_"] {
+	float: left; 
+	padding-left: 10px; 
+	padding-right: 10px; 
+	@include box-sizing(border-box);
+	position: relative;
+	@extend .clearfix;
+}
+@for $i from 1 through 12{
+	.#{grid}_#{$i}{ 
+		width: (100% / 12) * $i;
+	}
+	.#{prefix}_#{$i}{
+		margin-left: (100% / 12) * $i;
+	}
+}	 
+
+
+.alpha{ 
+	padding-left: 0;
+}
+.omega{
+	padding-right: 0; 
+}
+.clear{
+	clear: both;
+}
+.row{ 
+	margin-left: -10px;
+	margin-right: -10px;
+	@extend .clearfix;
+}
+.clearfix:before, .clearfix:after{
+	content: '.';
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	font-size: 0;
+	line-height: 0;
+	width: 0;
+	height: 0;
+}
+.clearfix:after{
+	clear: both;
+}
+//desktop / tablet
+@media only screen and (min-width: 768px) {
+	@for $i from 1 through 12 {
+		.#{prefix}_#{$i} {
+			margin-left: (100% / 12) * $i 
+		}
+		.#{post}_#{$i} {
+			margin-right: (100% / 12) * $i 
+		}
+	}
+}
+//tablet AND mobile
+@media only screen and (max-width: 959px) {
+	[class*="grid_"] {
+		padding-left: 20px;
+		padding-right: 20px;
+		.alpha {
+			padding-left: 0;
+		}
+		.omega {
+			padding-right: 0; 
+		}
+	}
+}
+//mobile
+@media only screen and (max-width: 767px) {
+	@for $i from 1 through 12{
+		.#{grid}_#{$i} {
+			width: 100%
+		}
+	@for $i from 1 through 12 {
+		.#{prefix}_#{$i} {
+			margin-left: 0; 
+		}
+		.#{post}_#{$i} {
+			margin-right: 0;
+		}
+	}		
+	}
+}

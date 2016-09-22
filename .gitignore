@@ -1,0 +1,10 @@
+.DS_Store
+.idea
+/.idea
+*.orig
+/*.log
+/node_modules
+/dist
+/bower_components
+/*.sublime-workspace
+/build
