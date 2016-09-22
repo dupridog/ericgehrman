@@ -19,6 +19,8 @@
     "url": "https://github.com/dupridog/ericgehrman/issues"
   },
   "devDependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
     "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.25.0",
     "file-loader": "^0.9.0",
