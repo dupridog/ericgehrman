@@ -1,8 +1,15 @@
 var angular = require('angular'); 
-var angularRoute = require('angular-route');
+var _ = require('lodash');
+var moment = require('moment');
 
+require('angular-ui-router');
 require('./sass/global.scss');
 require('font-awesome-webpack');
 
+window.moment = moment;
+window.app = angular.module('ericgehrman', ['ui.router']);
 
-window.app = angular.module([angularRoute]);
+
+require('./js/templates.js');
+require('./js/controllers.js'); 
+require('./js/routes.js'); 
